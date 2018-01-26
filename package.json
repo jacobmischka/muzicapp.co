@@ -1,0 +1,11 @@
+{
+  "name": "muzicapp.co",
+  "version": "0.1.0",
+  "main": "public/index.html",
+  "repository": "https://github.com/jacobmischka/muzicapp.co.git",
+  "author": "Jacob Mischka <jacob@mischka.me>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "deploy": "now --static public/ && cp now.json public/ && cd public/ && now alias && rm now.json"
+  }
+}
