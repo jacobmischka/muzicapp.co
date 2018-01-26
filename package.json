@@ -6,6 +6,7 @@
   "author": "Jacob Mischka <jacob@mischka.me>",
   "license": "UNLICENSED",
   "scripts": {
-    "deploy": "now --static public/ && cp now.json public/ && cd public/ && now alias && rm now.json"
+    "serve": "browser-sync start --server --ss public/ -f public/* --no-notify",
+    "deploy": "now public/ -A ../now.json"
   }
 }

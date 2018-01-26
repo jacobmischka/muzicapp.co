@@ -1,7 +1,9 @@
 <html>
 	<head>
-		<title>Muzic</title>
+		<title>MUZIC</title>
 		<style>
+			@import url('https://fonts.googleapis.com/css?family=Miriam+Libre:700|Permanent+Marker|Source+Sans+Pro');
+
 			html, body {
 				height: 100%;
 				width: 100%;
@@ -12,9 +14,21 @@
 			body {
 				display: flex;
 				flex-direction: column;
-				justify-content: center;
 				align-items: stretch;
-				font-family: sans-serif;
+				font-family: 'Source Sans Pro', sans-serif;
+				font-size: 1.25em;
+			}
+
+			header {
+				text-align: center;
+				padding: 0.5em 2em;
+			}
+
+			h1 {
+				font-family: 'Permanent Marker', sans-serif;
+				text-align: center;
+				font-size: 2em;
+				margin: 0.2em;
 			}
 
 			main {
@@ -23,6 +37,22 @@
 				flex-direction: column;
 				justify-content: space-around;
 				align-items: center;
+				padding: 1em 2em;
+			}
+
+			.logo {
+				height: 6em;
+				width: auto;
+			}
+
+			.tagline-container {
+				max-width: 550px;
+				line-height: 1.5;
+			}
+
+			.tagline {
+				font-size: 1.5em;
+				line-height: 1.2;
 			}
 
 			nav {
@@ -32,13 +62,60 @@
 				justify-content: space-around;
 				align-items: center;
 			}
+
+			nav a {
+				padding: 0.5em 1em;
+				font-family: 'Miriam Libre', sans-serif;
+				text-decoration: none;
+				text-transform: uppercase;
+				weight: 700;
+				background: #ff5722;
+				color: white;
+			}
+
+			nav a:hover {
+				text-decoration: none;
+				background: #ff8a50;
+			}
+
+			footer {
+				font-size: 0.75em;
+			}
+
+			@media (min-width: 500px) {
+				h1 {
+					font-size: 2.5em;
+				}
+
+				.logo {
+					height: 8em;
+				}
+
+				.tagline {
+					font-size: 2em;
+				}
+			}
+
+			@media (min-width: 800px) {
+				h1 {
+					font-size: 3em;
+				}
+
+				.logo {
+					height: 10em;
+				}
+			}
 		</style>
 	</head>
 	<body>
+		<header>
+			<h1>MUZIC</h1>
+		</header>
 		<main>
-			<h1>Muzic</h1>
-			<div>
-				<p>
+			<img class="logo" width="76" height="148"
+				src="./assets/muzic.svg" alt="Muzic Logo" />
+			<div class="tagline-container">
+				<p class="tagline">
 					Sick of your music? You’ll never say that again.
 				</p>
 				<p>
