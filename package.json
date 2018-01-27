@@ -8,5 +8,8 @@
   "scripts": {
     "serve": "browser-sync start --server --ss public/ -f public/* --no-notify",
     "deploy": "now public/ -A ../now.json"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.6"
   }
 }
