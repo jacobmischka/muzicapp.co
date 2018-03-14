@@ -1,0 +1,33 @@
+{{#if href}}
+	<a :href class="button">
+		<slot></slot>
+	</a>
+{{else}}
+	<button type="button" class="button" on:click="fire('click')">
+		<slot></slot>
+	</button>
+{{/if}}
+
+<style>
+	.button {
+		background: transparent;
+		text-transform: uppercase;
+		padding: 0.5em 1em;
+		border: 2px solid;
+		border-color: #e0e84c;
+		color: #e0e84c;
+		cursor: pointer;
+
+		transition: background 0.3s;
+	}
+
+	.button.white {
+		border-color: white;
+		color: rgba(0, 0, 0, 0.75);
+	}
+
+	.button:hover {
+		background: #e0e84c;
+		color: white;
+	}
+</style>

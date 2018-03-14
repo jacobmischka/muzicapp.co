@@ -1,0 +1,26 @@
+<:Head>
+	<title>MUZIC</title>
+</:Head>
+
+<Layout page="home">
+	<Button on:click="handleClick()">
+		Hm
+	</Button>
+</Layout>
+
+<script>
+	import Layout from '@/components/Layout.html';
+	import Button from '@/components/Button.html';
+
+	export default {
+		methods: {
+			handleClick() {
+				console.log('click');
+			}
+		},
+		components: {
+			Layout,
+			Button
+		}
+	};
+</script>
