@@ -1,3 +1,27 @@
-<main>
-	<slot></slot>
-</main>
+<div id="{{page}}">
+	<Header />
+
+	<main>
+		<slot></slot>
+	</main>
+
+	<Footer />
+</div>
+
+<style>
+
+</style>
+
+<script>
+	import Header from './Header.html';
+	import Footer from './Footer.html';
+
+	import '@/styles.css';
+
+	export default {
+		components: {
+			Header,
+			Footer
+		}
+	};
+</script>

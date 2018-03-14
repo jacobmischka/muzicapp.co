@@ -1,0 +1,34 @@
+<footer>
+	<p>
+		Muzic
+	</p>
+
+	<a href="#home">
+		Back to top
+	</a>
+</footer>
+
+<style>
+	footer {
+		padding: 2em;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		background-color: rgba(0, 0, 0, 0.85);
+		color: white;
+	}
+
+	a {
+		color: white;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	a:hover::before {
+		content: '↑'
+	}
+</style>

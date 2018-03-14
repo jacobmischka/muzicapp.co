@@ -3,16 +3,167 @@
 </:Head>
 
 <Layout page="home">
-	<Button on:click="handleClick()">
-		Hm
-	</Button>
+	<CalloutSection>
+		<h2>A social app to share and discover music with friends</h2>
+		<p>
+			<small>
+				And by friends, we mean all of your friends who are paying
+				subscribers to Spotify Premium.
+			</small>
+		</p>
+		<p>
+			<small>Music ain't free, folks.</small>
+		</p>
+
+		<Button white href="#">
+			Request access
+		</Button>
+	</CalloutSection>
+
+	<section id="about">
+		<h2>Sick of your music?</h2>
+
+		<p>
+			How many times have we all thought or said the following: I'M SICK OF MY MUSIC.
+			When you find yourself needing new music, you want it FAST and NOW.
+			The reality is you have to go digging for new jams because you’re
+			blasted with endless options in the browse section of Spotify or
+			Apple Music. Even if you’re an avid fan of Spotify’s Discover Weekly,
+			Apple Music’s The Beat’s 1 List or any playlist you follow, you still
+			have to listen to 30-60 songs just to find a couple of new songs you like.
+			Assuming each song is roughly 3 minutes long, thats 90 minutes of listening
+			time for 6 minutes of new music. That is a great deal of input for so
+			little output. In a perfect world, the quickest and easiest way to
+			discover new music would be to text your friends “hey, I need new music”
+			but that is a hassle for both parties involved.
+		</p>
+
+		<p>
+			Interesting enough our friends are feeding us new music on social media
+			all the time (and vice versa). But still no one is discovering new music
+			this way and those that would potentially share music are deterred from
+			doing so. Why? Well, how many times have we seen (or posted) a song
+			screenshot from Spotify or Apple Music on Instagram, Snapchat etc?
+			As the viewer, you usually skip over this post because the inconvenience
+			of shifting from Instagram to Spotify, for example, greatly outweighs the
+			potential of discovering a banger. As the sharer, you know viewers are
+			skipping over these posts because you do the same, so why share in the
+			first place? We all clearly want to share our music and discover our
+			friends' music but there's a disconnect. Here’s how MUZIC is the
+			connecting piece.
+		</p>
+
+		<p>
+			Remember before Spotify or Apple Music was a thing, what determined
+			whether or not you bought a song off of iTunes was that 30 second song
+			preview? If you liked what you heard in those 30 seconds, you bought the
+			song for 99 cents. Hated it? You moved on to a different 30 second preview.
+			What if there was an Instagram for music but instead of pictures, you and
+			your friends shared 15-30 second previews of songs. Similar to how you
+			browse Instagram in your down time, you’d browse MUZIC but as you scroll
+			and listen to 15 second previews, you’d  save the songs you previewed
+			right then and there to your MUZIC library. Once that “I need new music”
+			feeling comes along you already have a whole collection of new songs you
+			know you’ll like. Think of this collection like your Pinterest board for
+			music. Not only are you are always passively on the search for new music
+			but you won’t have to dig for new music again while aging a good 20 years
+			while doing it. Stay youthful my friends. This is MUZIC.
+		</p>
+
+		<div class="button-container">
+			<Button href="#">
+				Request access
+			</Button>
+		</div>
+	</section>
+
+	<CalloutSection id="feedback">
+		<h2>Help us create what you need</h2>
+
+		<p>
+			Tested Muzic and have suggestions?
+		</p>
+
+		<Button white href="#feedback">
+			Give us feedback
+		</Button>
+	</CalloutSection>
+
+	<section id="subscribe">
+		<Subscribe />
+	</section>
+
+	<CalloutSection id="contact">
+		<h2>Contact</h2>
+
+		<address>
+			<a href="{{`mailto:${CONTACT_EMAIL}`}}">
+				{{CONTACT_EMAIL}}
+			</a>
+		</address>
+	</CalloutSection>
 </Layout>
+
+<style>
+	:global(main > section ~ section) {
+		margin-top: 5em;
+	}
+
+	section {
+		color: rgba(0, 0, 0, 0.65);
+		padding: 1em 20%;
+	}
+
+	section h2 {
+		font-size: 4em;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	@media (min-width: 768px) {
+		section h2 {
+			font-size: 8em;
+		}
+	}
+
+	section p {
+		line-height: 1.75;
+		margin-bottom: 5em;
+	}
+
+	.button-container {
+		font-size: 1.5em;
+		text-align: center;
+	}
+
+	address {
+		font-style: normal;
+	}
+
+	address a {
+		text-decoration: none;
+		color: white;
+	}
+
+	address a:hover {
+		text-decoration: underline;
+	}
+</style>
 
 <script>
 	import Layout from '@/components/Layout.html';
+	import CalloutSection from '@/components/CalloutSection';
 	import Button from '@/components/Button.html';
+	import Subscribe from '@/components/Subscribe.html';
+
+	import { CONTACT_EMAIL } from '@/constants.js';
 
 	export default {
+		data() {
+			return {
+				CONTACT_EMAIL
+			};
+		},
 		methods: {
 			handleClick() {
 				console.log('click');
@@ -20,7 +171,9 @@
 		},
 		components: {
 			Layout,
-			Button
+			CalloutSection,
+			Button,
+			Subscribe
 		}
 	};
 </script>

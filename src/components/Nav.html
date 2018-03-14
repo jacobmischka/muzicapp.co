@@ -1,5 +1,5 @@
 <nav>
-	<a href="/">Muzic</a>
+	<a class="home-link primary-color" href="/">Muzic</a>
 	<ul>
 		<li><a href="#about">About</a></li>
 		<li><a href="#feedback">Feedback</a></li>
@@ -7,3 +7,45 @@
 		<li><a href="#contact">Contact</a></li>
 	</ul>
 </nav>
+
+<style>
+	nav, ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	nav {
+		height: 75px;
+		padding: 0.5em 1em;
+		justify-content: space-between;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li, .home-link {
+		/* margin: 1em; */
+	}
+
+	li a {
+		padding: 0.5em;
+	}
+
+	a, a:hover {
+		text-decoration: none;
+	}
+
+	a:hover {
+		background-color: rgba(0, 0, 0, 0.05);
+	}
+
+	.home-link {
+		font-size: 4em;
+		text-transform: uppercase;
+	}
+</style>

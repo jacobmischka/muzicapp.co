@@ -1,33 +1,65 @@
 {{#if href}}
-	<a :href class="button">
+	<a :href class="{{classname}}">
 		<slot></slot>
 	</a>
 {{else}}
-	<button type="button" class="button" on:click="fire('click')">
+	<button type="{{type}}" class="{{classname}}"
+			on:click="fire('click')">
 		<slot></slot>
 	</button>
 {{/if}}
 
 <style>
 	.button {
-		background: transparent;
+		background-color: transparent;
 		text-transform: uppercase;
+		text-decoration: none;
 		padding: 0.5em 1em;
 		border: 2px solid;
 		border-color: #e0e84c;
 		color: #e0e84c;
 		cursor: pointer;
 
-		transition: background 0.3s;
+		transition-property: color background-color;
+		transition-duration: 0.025s;
 	}
 
 	.button.white {
 		border-color: white;
-		color: rgba(0, 0, 0, 0.75);
+		color: white;
 	}
 
 	.button:hover {
-		background: #e0e84c;
+		background-color: #e0e84c;
 		color: white;
+		text-decoration: none;
+	}
+
+	.button.white:hover {
+		background-color: white;
+		color: #e0e84c;
 	}
 </style>
+
+<script>
+	import classnames from 'classnames';
+
+	export default {
+		data() {
+			return {
+				type: 'button'
+			};
+		},
+		helpers: {
+			classnames
+		},
+		computed: {
+			classname(white) {
+				return classnames({
+					button: true,
+					white
+				});
+			}
+		}
+	};
+</script>
