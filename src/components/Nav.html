@@ -3,10 +3,10 @@
 		<a class="primary-color" href="/#home">Muzic</a>
 	</h1>
 	<ul>
-		<li><a href="#about">About</a></li>
-		<li><a href="#feedback">Feedback</a></li>
-		<li><a href="#subscribe">Subscribe</a></li>
-		<li><a href="#contact">Contact</a></li>
+		<li><FixedHeaderLink href="#about">About</FixedHeaderLink></li>
+		<li><FixedHeaderLink href="#feedback">Feedback</FixedHeaderLink></li>
+		<li><FixedHeaderLink href="#subscribe">Subscribe</FixedHeaderLink></li>
+		<li><FixedHeaderLink href="#contact">Contact</FixedHeaderLink></li>
 	</ul>
 </nav>
 
@@ -44,16 +44,16 @@
 		/* margin: 1em; */
 	}
 
-	a, a:hover {
+	nav :global(a), nav :global(a:hover) {
 		text-decoration: none;
 	}
 
-	li a {
+	li :global(a) {
 		color: rgba(0, 0, 0, 0.45);
 		padding: 0.5em;
 	}
 
-	li a:hover {
+	li :global(a:hover) {
 		color: rgba(0, 0, 0, 0.67);
 	}
 
@@ -67,3 +67,13 @@
 		}
 	}
 </style>
+
+<script>
+	import FixedHeaderLink from './FixedHeaderLink.html';
+
+	export default {
+		components: {
+			FixedHeaderLink
+		}
+	};
+</script>
