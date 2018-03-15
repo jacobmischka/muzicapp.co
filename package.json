@@ -21,7 +21,8 @@
     "typeface-anton": "^0.0.54",
     "typeface-montserrat": "^0.0.54",
     "typeface-nunito": "^0.0.54",
-    "typeface-open-sans": "^0.0.54"
+    "typeface-open-sans": "^0.0.54",
+    "typeface-oswald": "^0.0.54"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.37",
