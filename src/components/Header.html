@@ -1,8 +1,8 @@
-<header id="header">
+<header ref:header id="header">
 	<Nav />
 </header>
 
-<:Window on:load="handleLoad(event)" />
+<:Window on:load="handleLoad(event)" on:resize="handleResize(event)" />
 
 <style>
 	header {
@@ -17,6 +17,11 @@
 
 	:global(main) {
 		padding-top: 5em;
+	}
+
+	:global(.full-height) {
+		min-height: 100vw;
+		box-sizing: border-box;
 	}
 </style>
 
@@ -43,9 +48,22 @@
 				}
 			},
 			handleLoad() {
+				this.handleResize();
 				const { hash } = window.location;
 				if (hash && hash.length > 1)
 					scrollToElement(hash, false);
+			},
+			handleResize() {
+				window.requestAnimationFrame(() => {
+					window.requestAnimationFrame(() => {
+						const headerHeight = this.refs.header.clientHeight;
+						const main = document.querySelector('main');
+						main.style.paddingTop = `${headerHeight}px`;
+						for (const el of document.querySelectorAll('.full-height')) {
+							el.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+						}
+					});
+				});
 			}
 		},
 		components: {
