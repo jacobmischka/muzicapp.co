@@ -3,7 +3,7 @@
 </:Head>
 
 <Layout page="home">
-	<CalloutSection>
+	<CalloutSection id="hero">
 		<h2>A social app to share and discover music with friends</h2>
 		<p>
 			<small>
@@ -119,21 +119,22 @@
 		padding: 1em 20%;
 	}
 
-	section h2 {
+	:global(h2) {
 		font-size: 3em;
 		text-align: center;
 		text-transform: uppercase;
 		margin-top: 0;
+		margin-bottom: 0.25em;
 	}
 
 	@media (min-width: 500px) {
-		section h2 {
+		:global(h2) {
 			font-size: 4em;
 		}
 	}
 
 	@media (min-width: 768px) {
-		section h2 {
+		:global(h2) {
 			font-size: 4.5em;
 		}
 	}
@@ -166,6 +167,34 @@
 
 	address a:hover {
 		text-decoration: underline;
+	}
+
+	:global(#hero h2) {
+		font-size: 3rem;
+	}
+
+	@media (min-width: 500px) {
+		:global(#hero h2) {
+			font-size: 4rem;
+		}
+	}
+
+	@media (min-width: 768px) {
+		:global(#hero h2) {
+			font-size: 5rem;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		:global(#hero h2) {
+			font-size: 6rem;
+		}
+	}
+
+	@media (min-width: 1600px) {
+		:global(#hero h2) {
+			font-size: 7rem;
+		}
 	}
 </style>
 
