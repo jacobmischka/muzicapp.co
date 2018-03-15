@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "NODE_ENV=production sapper export",
-    "start": "NODE_ENV=production node server.js"
+    "deploy": "now export/ -A ../now.json"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -18,7 +18,9 @@
     "sapper": "^0.9.6",
     "serve-static": "^1.13.1",
     "svelte": "^1.51.1",
-    "typeface-open-sans": "^0.0.54"
+    "typeface-anton": "^0.0.54",
+    "typeface-open-sans": "^0.0.54",
+    "typeface-oswald": "^0.0.54"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.37",
