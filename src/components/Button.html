@@ -18,11 +18,17 @@
 		padding: 0.5em 1em;
 		border: 2px solid;
 		border-color: #e0e84c;
+		border-radius: 3px;
 		color: #e0e84c;
 		cursor: pointer;
 
 		transition-property: color, background-color;
-		transition-duration: 0.025s;
+		transition-duration: 0.05s;
+	}
+
+	.button.loose {
+		font-size: 0.75em;
+		padding: 1.25em 2em;
 	}
 
 	.button.dark {
@@ -43,7 +49,7 @@
 
 	.button.white:hover {
 		background-color: white;
-		color: #e0e84c;
+		color: rgba(0, 0, 0, 0.8);
 	}
 
 	.button.dark:hover {
@@ -66,10 +72,12 @@
 			classnames
 		},
 		computed: {
-			classname(white, variant) {
+			classname(white, dark, loose, variant) {
 				return classnames({
 					button: true,
-					white
+					white,
+					dark,
+					loose
 				}, variant);
 			}
 		}

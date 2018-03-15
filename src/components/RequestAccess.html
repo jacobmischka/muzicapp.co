@@ -1,12 +1,13 @@
 <div class="request-access">
 	{{#if showInput}}
-		<EmailSubscriber buttonVariant="white">
+		<EmailSubscriber :buttonVariant>
 			<p>
 				Thanks! We'll let you know when MUZIC is ready for testing
 			</p>
 		</EmailSubscriber>
 	{{else}}
-		<Button white on:click="set({showInput: true})">
+		<Button loose variant="{{buttonVariant}}"
+				on:click="set({showInput: true})">
 			Request access
 		</Button>
 	{{/if}}
@@ -16,6 +17,8 @@
 	.request-access > :global(.button) {
 		font-size: 1em;
 		text-align: center;
+		display: block;
+		margin: 0 auto;
 	}
 </style>
 
@@ -24,6 +27,11 @@
 	import Button from './Button.html';
 
 	export default {
+		data() {
+			return {
+				buttonVariant: 'white'
+			};
+		},
 		components: {
 			EmailSubscriber,
 			Button
