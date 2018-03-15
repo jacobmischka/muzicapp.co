@@ -1,5 +1,7 @@
 <nav>
-	<a class="home-link primary-color" href="/">Muzic</a>
+	<h1>
+		<a class="primary-color" href="/#home">Muzic</a>
+	</h1>
 	<ul>
 		<li><a href="#about">About</a></li>
 		<li><a href="#feedback">Feedback</a></li>
@@ -17,9 +19,19 @@
 	}
 
 	nav {
-		height: 75px;
 		padding: 0.5em 1em;
 		justify-content: space-between;
+	}
+
+	ul {
+		justify-content: center;
+	}
+
+	h1 {
+		font-family: 'Impact', sans-serif;
+		margin: 0;
+		font-size: 4em;
+		text-transform: uppercase;
 	}
 
 	ul {
@@ -32,20 +44,26 @@
 		/* margin: 1em; */
 	}
 
-	li a {
-		padding: 0.5em;
-	}
-
 	a, a:hover {
 		text-decoration: none;
 	}
 
-	a:hover {
-		background-color: rgba(0, 0, 0, 0.05);
+	li a {
+		color: rgba(0, 0, 0, 0.45);
+		padding: 0.5em;
 	}
 
-	.home-link {
-		font-size: 4em;
-		text-transform: uppercase;
+	li a:hover {
+		color: rgba(0, 0, 0, 0.67);
+	}
+
+	@media (max-width: 600px) {
+		nav {
+			flex-direction: column;
+		}
+
+		h1 {
+			font-size: 3em;
+		}
 	}
 </style>
