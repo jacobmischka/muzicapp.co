@@ -13,7 +13,7 @@ export function scrollToElement(href, pushState = true) {
 		if (header && el) {
 			const headerHeight = header.getBoundingClientRect().height;
 			const targetTop = el.getBoundingClientRect().top;
-			console.log(targetTop - headerHeight);
+
 			window.scrollBy(0, targetTop - headerHeight);
 			scrolled = true;
 		}
@@ -24,7 +24,7 @@ export function scrollToElement(href, pushState = true) {
 
 		window.history.pushState(
 			{ href },
-			null,
+			href,
 			origin + pathname + href + search
 		);
 	}

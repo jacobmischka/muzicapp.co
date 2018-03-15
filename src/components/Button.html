@@ -21,8 +21,13 @@
 		color: #e0e84c;
 		cursor: pointer;
 
-		transition-property: color background-color;
+		transition-property: color, background-color;
 		transition-duration: 0.025s;
+	}
+
+	.button.dark {
+		border-color: rgba(0, 0, 0, 0.35);
+		color: rgba(0, 0, 0, 0.55);
 	}
 
 	.button.white {
@@ -39,6 +44,11 @@
 	.button.white:hover {
 		background-color: white;
 		color: #e0e84c;
+	}
+
+	.button.dark:hover {
+		background-color: rgba(0, 0, 0, 0.35);
+		color: white;
 	}
 </style>
 

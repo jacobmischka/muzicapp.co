@@ -1,5 +1,3 @@
-<:Window on:popstate="handlePopState(event)" />
-
 <div id="{{page}}">
 	<Header />
 
@@ -18,25 +16,10 @@
 	import Header from './Header.html';
 	import Footer from './Footer.html';
 
-	import { scrollToElement } from '../utils.js';
-
+	import 'typeface-open-sans';
 	import '@/styles.css';
 
 	export default {
-		methods: {
-			handlePopState(event) {
-				try {
-					const { href } = event.state;
-					if (href) {
-						setTimeout(() => {
-							scrollToElement(href, false);
-						}, 0);
-					}
-				} catch (e) {
-					console.error(e);
-				}
-			}
-		},
 		components: {
 			Header,
 			Footer

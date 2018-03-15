@@ -2,6 +2,8 @@
 	<Nav />
 </header>
 
+<:Window on:load="handleLoad(event)" />
+
 <style>
 	header {
 		background: white;
@@ -19,9 +21,33 @@
 </style>
 
 <script>
+	// Coupled a bit with FixedHeaderLink for "proper" handling of in-page links
+
 	import Nav from './Nav.html';
 
+	import { scrollToElement } from '@/utils.js';
+
 	export default {
+		oncreate() {
+			window.onpopstate = this.handlePopState;
+		},
+		methods: {
+			handlePopState(event) {
+				try {
+					const { href } = event.state;
+					if (href) {
+						scrollToElement(href, false);
+					}
+				} catch (e) {
+					console.error(e);
+				}
+			},
+			handleLoad() {
+				const { hash } = window.location;
+				if (hash && hash.length > 1)
+					scrollToElement(hash, false);
+			}
+		},
 		components: {
 			Nav
 		}
