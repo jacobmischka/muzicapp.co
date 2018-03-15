@@ -15,9 +15,8 @@
 			<small>Music ain't free, folks.</small>
 		</p>
 
-		<Button white href="#">
-			Request access
-		</Button>
+		<RequestAccess />
+
 	</CalloutSection>
 
 	<section id="about">
@@ -71,9 +70,7 @@
 		</p>
 
 		<div class="button-container">
-			<Button href="#">
-				Request access
-			</Button>
+			<RequestAccess />
 		</div>
 	</section>
 
@@ -155,6 +152,7 @@
 	import CalloutSection from '@/components/CalloutSection';
 	import Button from '@/components/Button.html';
 	import Subscribe from '@/components/Subscribe.html';
+	import RequestAccess from '@/components/RequestAccess.html';
 
 	import { CONTACT_EMAIL } from '@/constants.js';
 
@@ -165,15 +163,14 @@
 			};
 		},
 		methods: {
-			handleClick() {
-				console.log('click');
-			}
+
 		},
 		components: {
 			Layout,
 			CalloutSection,
 			Button,
-			Subscribe
+			Subscribe,
+			RequestAccess
 		}
 	};
 </script>

@@ -10,7 +10,7 @@
 {{/if}}
 
 <style>
-	.button {
+	.button, .button.primary {
 		text-align: center;
 		text-transform: uppercase;
 		text-decoration: none;
@@ -48,18 +48,19 @@
 	export default {
 		data() {
 			return {
-				type: 'button'
+				type: 'button',
+				variant: null
 			};
 		},
 		helpers: {
 			classnames
 		},
 		computed: {
-			classname(white) {
+			classname(white, variant) {
 				return classnames({
 					button: true,
 					white
-				});
+				}, variant);
 			}
 		}
 	};
