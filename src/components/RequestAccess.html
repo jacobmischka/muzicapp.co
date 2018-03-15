@@ -1,14 +1,23 @@
-{{#if showInput}}
-	<EmailSubscriber buttonVariant="white">
-		<p>
-			Thanks! We'll let you know when MUZIC is ready for testing
-		</p>
-	</EmailSubscriber>
-{{else}}
-	<Button white on:click="set({showInput: true})">
-		Request access
-	</Button>
-{{/if}}
+<div class="request-access">
+	{{#if showInput}}
+		<EmailSubscriber buttonVariant="white">
+			<p>
+				Thanks! We'll let you know when MUZIC is ready for testing
+			</p>
+		</EmailSubscriber>
+	{{else}}
+		<Button white on:click="set({showInput: true})">
+			Request access
+		</Button>
+	{{/if}}
+</div>
+
+<style>
+	.request-access > :global(.button) {
+		font-size: 1em;
+		text-align: center;
+	}
+</style>
 
 <script>
 	import EmailSubscriber from './EmailSubscriber.html';
