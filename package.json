@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "sapper dev",
     "build": "NODE_ENV=production sapper export",
+    "serve": "serve export",
     "deploy": "now export/ -A ../now.json"
   },
   "dependencies": {
@@ -45,6 +46,7 @@
     "npm-run-all": "^4.1.2",
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.10",
+    "serve": "^6.5.3",
     "style-loader": "^0.20.2",
     "svelte-loader": "^2.3.3",
     "uglifyjs-webpack-plugin": "^1.1.5",
